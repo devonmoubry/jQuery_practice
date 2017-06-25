@@ -17,17 +17,17 @@ $('.loc').hover(
 // Adds a pet to the page with user input
 $('#add-pet').on('click', function() {
   // Grab info from the form
-  var $name = $('#pet-name').val();
-  var $species = $('#pet-species').val();
-  var $notes = $('#pet-notes').val();
+  var $name = $('#pet-name');
+  var $species = $('#pet-species');
+  var $notes = $('#pet-notes');
 
   // It would be cool to toss some conditional logic in here that displayed an icon based on the input species, but not necessary.
 
   // Assemble the HTML of our new element with the above variables
   var $newPet = $(
-    '<section class="six columns"><div class="card"><p><strong>Name:</strong> ' + $name +
-    '</p><p><strong>Species:</strong> ' + $species +
-    '</p><p><strong>Notes:</strong> ' + $notes +
+    '<section class="six columns"><div class="card"><p><strong>Name:</strong> ' + $name.val() +
+    '</p><p><strong>Species:</strong> ' + $species.val() +
+    '</p><p><strong>Notes:</strong> ' + $notes.val() +
     '</p><span class="close">&times;</span></div></section>'
   );
   // Attach the new element to the page
@@ -39,9 +39,9 @@ $('#add-pet').on('click', function() {
   });
 
   // Reset form fields
-  $('#pet-name').val("");
-  $('#pet-species').val("Dog");
-  $('#pet-notes').val("");
+  $name.val("");
+  $species.val("Dog");
+  $notes.val("");
 });
 
 // Possible bonus goals:
